@@ -1,0 +1,8 @@
+<h2>Ovnis</h2>
+<ul>
+  <% @ovnis.each do |ovni| %>
+    <li><%= ovni.name %></li>
+    <li><%= ovni.price %></li>
+    <li><%= ovni.details %></li>
+  <% end %>
+</ul>
