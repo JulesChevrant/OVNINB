@@ -5,7 +5,11 @@ class OvniPolicy < ApplicationPolicy
     end
 
     def create?
-      return true
+      true
+    end
+
+    def new?
+      true
     end
   end
 end
