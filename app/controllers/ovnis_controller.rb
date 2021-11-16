@@ -1,5 +1,5 @@
 class OvnisController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show new]
 
   def index
     @ovnis = Ovni.all
@@ -11,5 +11,16 @@ class OvnisController < ApplicationController
 
   def new
     @ovni = Ovni.new
+    authorize(@ovni)
+  end
+
+  def edit
+    @ovni = Ovni.find(params[:id])
+  end
+
+  def destroy
+    @ovni = Ovni.find(params[:id])
+    @ovni.destroy
+    redirect_to ovnis_path
   end
 end
