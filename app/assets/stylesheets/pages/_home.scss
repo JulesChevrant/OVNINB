@@ -27,6 +27,11 @@ h1 {
   color: white;
 }
 
+.nav-link:hover{
+  color: white;
+  border-bottom: 1px solid #ffffff;
+}
+
 .avatar {
   text-decoration: none;
 }
@@ -34,6 +39,7 @@ h1 {
 .banner {
   width: 100vw;
   height: 60vh;
+  margin-left: -40px;
 }
 
 .banner h1 {
@@ -109,7 +115,7 @@ h1 {
 
 .btn {
   border: none;
-  background-color: hsl(257, 100%, 80%);
+  background-color: hsl(0, 0%, 0%);
   padding: .75em 1.5em;
   border-radius: .25em;
   transition: background-color 200ms ease;
@@ -120,10 +126,12 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  color: white;
 }
 
 .btn:hover {
-    background-color: hsl(257, 100%, 72%);
+    background-color: hsl(257, 51%, 42%);
+    color: white;
 }
 
 .card-header.header-img {
