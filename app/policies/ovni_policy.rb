@@ -11,5 +11,13 @@ class OvniPolicy < ApplicationPolicy
     def new?
       true
     end
+
+    def show?
+      true
+    end
+
+    def new
+      true
+    end
   end
 end

@@ -7,6 +7,7 @@ class OvnisController < ApplicationController
 
   def show
     @ovni = Ovni.find(params[:id])
+    authorize(@ovni)
   end
 
   def new
