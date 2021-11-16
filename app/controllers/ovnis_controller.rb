@@ -5,6 +5,10 @@ class OvnisController < ApplicationController
     @ovnis = Ovni.all
   end
 
+  def show
+    @ovni = Ovni.find(params[:id])
+  end
+
   def new
     @ovni = Ovni.new
   end
