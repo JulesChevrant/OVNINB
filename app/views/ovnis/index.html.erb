@@ -4,5 +4,10 @@
     <li><%= ovni.name %></li>
     <li><%= ovni.price %></li>
     <li><%= ovni.details %></li>
+    <%= link_to ovni.name, ovni_path(ovni.id) %>
   <% end %>
 </ul>
+
+<%= link_to new_ovni_path do %>
+  <i class="fa fa-plus"></i> Add a new ovni
+<% end %>
