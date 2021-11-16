@@ -1,0 +1,2 @@
+class OvnisController < ApplicationController
+end
