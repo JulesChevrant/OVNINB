@@ -12,7 +12,9 @@
       <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
       <p class="card-text m-4"><%= @ovni.details %></p>
       <%= link_to 'Retour', ovnis_path, class: "btn btn-primary m-2" %>
-      <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
+      <% if current_user == @ovni.user %>
+        <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
+      <% end %>
 
       <%= simple_form_for [ @ovni, @reservation ] do |f| %>
         <%= f.input :dates %>
