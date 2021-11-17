@@ -1,13 +1,16 @@
 class OvnisController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show new]
+  #skip_before_action :skip_authorization, only: [:index, :show]
 
   def index
-    @ovnis = Ovni.all
+    @ovnis = policy_scope(Ovni)
+    skip_authorization
   end
 
   def show
     @ovni = Ovni.find(params[:id])
-    authorize(@ovni)
+    #authorize(@ovni)
+    skip_authorization
   end
 
   def new
