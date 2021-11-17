@@ -1,16 +1,20 @@
 <div class="card m-5" style="width: 60rem;">
-
   <%= cl_image_tag(@ovni.photo.key,
       width: 400, height: 300, crop: :fill) %>
-
-
   <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
   <div class="card-body">
-    <h5 class="card-title m-4"><%= @ovni.name %></h4>
+    <h5 class="card-title m-4"><%= @ovni.name %></h5>
     <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
     <p class="card-text m-4"><%= @ovni.details %></p>
     <%= link_to 'Louer', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
     <%= link_to 'Retour', ovnis_path, class: "btn btn-primary m-2" %>
     <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
   </div>
+  <%= link_to 'Edit', edit_ovni_path(@ovni) %> |
+  <%= link_to 'Back', ovnis_path %> |
+  <%= simple_form_for [ @ovni, @reservation ] do |f| %>
+    <%= f.input :dates %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
 </div>
+
