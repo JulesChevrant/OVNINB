@@ -21,7 +21,7 @@ file = URI.open('https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e2
 ovni1.photo.attach(io: file, filename: 'ovni1.png', content_type: 'image/png')
 
 ovni2 = Ovni.create(name: 'Merco44', price: 2000, details: 'Soucoupe volante pour 15 personnes', user: user2)
-file = URI.open('https://img.over-blog.com/600x572/2/84/43/77/Bassin-d-Arcachon/soucoupe6.jpg')
+file = URI.open('https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg')
 ovni2.photo.attach(io: file, filename: 'ovni2.png', content_type: 'image/png')
 
 ovni3 = Ovni.create(name: 'Alpha10', price: 1200, details: 'Soucoupe volante pour 6 personnes', user: user3)
