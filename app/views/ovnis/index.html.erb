@@ -2,7 +2,7 @@
 
 <% @ovnis.each do |ovni| %>
   <div class="card-product">
-    <img src="https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e286ebf35/1280x720-webp/0611438495565-web-tete.webp" />
+    <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
     <div class="card-product-infos">
       <h2 class="name"><%= link_to ovni.name, ovni_path(ovni) %></h2>
       <p><%= ovni.details %></p>

@@ -17,7 +17,7 @@
   <% @ovnis.each do |ovni| %>
     <div class="card d-flex justify-content-center">
       <header class="card-header header-img">
-        <img src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="">
+        <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
         <p class="header-title"><%= ovni.price %></p>
       </header>
       <div class="card-body"> Direction ta nouvelle galaxie </div>
