@@ -4,3 +4,8 @@
 
 <%= link_to 'Edit', edit_ovni_path(@ovni) %> |
 <%= link_to 'Back', ovnis_path %> |
+
+<%= simple_form_for [ @ovni, @reservation ] do |f| %>
+  <%= f.input :dates %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

@@ -7,7 +7,8 @@ class OvnisController < ApplicationController
 
   def show
     @ovni = Ovni.find(params[:id])
-    authorize(@ovni)
+    @reservation = Reservation.new
+    skip_authorization
   end
 
   def new
