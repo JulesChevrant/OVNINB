@@ -1,0 +1,8 @@
+<%# index des réservations d'un user / Un pour celui qui met en loc ? %>
+<h1>Mes réservations</h1>
+
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li><%= reservation.date %></li>
+  <% end %>
+</ul>

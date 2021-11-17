@@ -1,0 +1,6 @@
+<h1><%= @user.first_name%></h1>
+
+<% @reservations.each do |reservation| %>
+  <p><%= reservation.dates %></p>
+  <p><%= reservation.ovni.name %></p>
+<% end %>
