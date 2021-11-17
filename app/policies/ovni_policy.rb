@@ -16,7 +16,7 @@ class OvniPolicy < ApplicationPolicy
       true
     end
 
-    def new
+    def index?
       true
     end
   end
