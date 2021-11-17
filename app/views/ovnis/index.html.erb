@@ -1,12 +1,15 @@
 <h2>Ovnis</h2>
-<ul>
-  <% @ovnis.each do |ovni| %>
-    <li><%= ovni.name %></li>
-    <li><%= ovni.price %></li>
-    <li><%= ovni.details %></li>
-    <%= link_to ovni.name, ovni_path(ovni.id) %>
-  <% end %>
-</ul>
+
+<% @ovnis.each do |ovni| %>
+  <div class="card-product">
+    <img src="https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e286ebf35/1280x720-webp/0611438495565-web-tete.webp" />
+    <div class="card-product-infos">
+      <h2 class="name"><%= ovni.name %></h2>
+      <p><%= ovni.details %></p>
+      <p class="ovni-price"><strong><%= ovni.price%> €</strong></p>
+    </div>
+  </div>
+<% end %>
 
 <%= link_to new_ovni_path do %>
   <i class="fa fa-plus"></i> Add a new ovni
