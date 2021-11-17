@@ -4,6 +4,8 @@
     <li><%= ovni.name %></li>
     <li><%= ovni.price %></li>
     <li><%= ovni.details %></li>
+    <%= cl_image_tag(ovni.photo.key,
+      width: 400, height: 300, crop: :fill) %>
     <%= link_to ovni.name, ovni_path(ovni.id) %>
   <% end %>
 </ul>
