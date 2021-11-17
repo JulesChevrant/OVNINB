@@ -127,6 +127,8 @@ h1 {
   justify-content: center;
   margin: 0 auto;
   color: white;
+  color: rgb(218, 209, 209);
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -153,9 +155,27 @@ h1 {
 	filter: brightness(0.9);
 }
 
+a {
+    color: rgb(218, 209, 209);
+    text-decoration: none;
+}
+
 .btn-all {
-  color: white;
+  a {
+    color: black !important;
+  }
+}
+.btn-all {
+  color: black !important;
   border: 1px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+}
+
+
+.btn-index {
+  color: black;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
