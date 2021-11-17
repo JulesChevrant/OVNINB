@@ -13,7 +13,7 @@
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "ovni.png"%><h1>Ovni ' Nb</h1>
       <% end %>
 
@@ -22,10 +22,10 @@
       </button>
 
       <div class="box collapse navbar-collapse" id="navbarSupportedContent">
-        <%= link_to "Nos vaisseaux", "#", class: "nav-link" %>
+        <%= link_to "Nos vaisseaux", ovnis_path, class: "nav-link" %>
       </div>
       <div class='d-flex'>
-        <%= link_to "Connexion", "#", class: "nav-link" %>
+        <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
     </div>
@@ -48,7 +48,7 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
       <div class="footer-copyright">
-        This footer is made with <i class="fas fa-heart"></i> at Le Wagon by Ovni'Nb
+        This footer is made with <i class="fas fa-heart"></i> by Ovni'Nb
       </div>
     </div>
   </body>

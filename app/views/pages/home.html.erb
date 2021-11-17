@@ -4,7 +4,7 @@
       <div class="search-form-control form-group d-flex">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" />
         <div><button name="button" type="submit" class="btn btn-primary mt-0">
-          <i class="fas fa-search"></i> Search
+          <i class="fas fa-search"></i> <%= link_to "Search", ovnis_path%>
         </button>
         </div>
       </div>
@@ -12,53 +12,24 @@
   </div>
 </div>
 
+
 <div class="card-container">
-  <div class="card d-flex justify-content-center">
-    <header class="card-header header-img">
-      <img src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="">
-      <p class="header-title">224,900 €</p>
-    </header>
-    <div class="card-body"> Direction Mars </div>
-    <div class="card-footer">
-      <button class="btn mt-3">Plus d'infos</button>
+  <% @ovnis.each do |ovni| %>
+    <div class="card d-flex justify-content-center">
+      <header class="card-header header-img">
+        <img src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="">
+        <p class="header-title"><%= ovni.price %></p>
+      </header>
+      <div class="card-body"> Direction ta nouvelle galaxie </div>
+      <div class="card-footer">
+        <button class="btn mt-3"> <%= link_to "Plus d'infos", ovni_path(ovni) %> </button>
+      </div>
     </div>
-  </div>
-
-  <div class="card">
-    <header class="card-header header-img">
-      <img src="https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e286ebf35/1280x720-webp/0611438495565-web-tete.webp" alt="">
-      <p class="header-title">299,900 €</p>
-    </header>
-    <div class="card-body">Direction Jupiter</div>
-    <div class="card-footer">
-      <button class="btn mt-3">Plus d'infos</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <header class="card-header header-img">
-      <img src="https://img.over-blog.com/600x572/2/84/43/77/Bassin-d-Arcachon/soucoupe6.jpg" alt="">
-      <p class="header-title">339,000 €</p>
-    </header>
-    <div class="card-body">Direction Neptune</div>
-    <div class="card-footer">
-      <button class="btn mt-3">Plus d'infos</button>
-    </div>
-  </div>
-
-	<div class="card">
-    <header class="card-header header-img">
-      <img class="img-ovni" src="https://file1.telestar.fr/var/telestar/storage/images/media/images/2015/photos/20150408-vires-du-bon-coin/la-soucoupe-de-la-soupe-aux-choux-vendue-sur-ebay/823171-3-fre-FR/La-soucoupe-de-La-soupe-aux-choux-vendue-sur-eBay.jpg?alias=exact1024x768_l&size=x100&format=webp" alt="">
-      <p class="header-title">400,000 €</p>
-    </header>
-    <div class="card-body">Direction Saturne</div>
-    <div class="card-footer">
-      <button class="btn mt-3">Plus d'infos</button>
-    </div>
-  </div>
+  <% end %>
 </div>
 
-<div class="btn-index d-flex justify-content-between mt-5 mb-5">
-  <h4>Découvre l'emsemble des vaissaux de ta région</h4>
-  <%= link_to "Toutes les soucoupes", "#", class: "btn btn-all" %>
+
+<div class="btn-index d-flex align-items justify-content-between mt-5 mb-5">
+  <h4>Découvre l'ensemble des vaissaux de ta région</h4>
+  <button id="" class="btn-all"> <%=link_to "Voir tous nos vaissaux", ovnis_path%> </button>
 </div>
