@@ -1,5 +1,10 @@
 <div class="card m-5" style="width: 60rem;">
-  <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap">
+
+  <%= cl_image_tag(@ovni.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+
+
+  <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
   <div class="card-body">
     <h5 class="card-title m-4"><%= @ovni.name %></h4>
     <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
