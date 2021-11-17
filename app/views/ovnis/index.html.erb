@@ -4,7 +4,7 @@
   <div class="card-product">
     <img src="https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e286ebf35/1280x720-webp/0611438495565-web-tete.webp" />
     <div class="card-product-infos">
-      <h2 class="name"><%= ovni.name %></h2>
+      <h2 class="name"><%= link_to ovni.name, ovni_path(ovni) %></h2>
       <p><%= ovni.details %></p>
       <p class="ovni-price"><strong><%= ovni.price%> €</strong></p>
     </div>

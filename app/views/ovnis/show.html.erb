@@ -1,16 +1,18 @@
-<div class="card m-5" style="width: 60rem;">
+<div class="d-flex justify-content-center">
+  <div class="card m-5" style="width: 80rem;">
 
-  <%= cl_image_tag(@ovni.photo.key,
-      width: 400, height: 300, crop: :fill) %>
+    <%= cl_image_tag(@ovni.photo.key,
+        crop: :fill, class: "card-img-top") %>
 
 
-  <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
-  <div class="card-body">
-    <h5 class="card-title m-4"><%= @ovni.name %></h4>
-    <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
-    <p class="card-text m-4"><%= @ovni.details %></p>
-    <%= link_to 'Louer', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
-    <%= link_to 'Retour', ovnis_path, class: "btn btn-primary m-2" %>
-    <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
+    <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
+    <div class="card-body">
+      <h5 class="card-title m-4"><%= @ovni.name %></h4>
+      <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
+      <p class="card-text m-4"><%= @ovni.details %></p>
+      <%= link_to 'Louer', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
+      <%= link_to 'Retour', ovnis_path, class: "btn btn-primary m-2" %>
+      <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
+    </div>
   </div>
 </div>
