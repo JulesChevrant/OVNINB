@@ -11,17 +11,13 @@
       <h5 class="card-title m-4"><%= @ovni.name %></h4>
       <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
       <p class="card-text m-4"><%= @ovni.details %></p>
-      <%= link_to 'Louer', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
       <%= link_to 'Retour', ovnis_path, class: "btn btn-primary m-2" %>
       <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary m-2" %>
+
+      <%= simple_form_for [ @ovni, @reservation ] do |f| %>
+        <%= f.input :dates %>
+        <%= f.submit %>
+    <% end %>
     </div>
-
   </div>
-  <%= link_to 'Edit', edit_ovni_path(@ovni) %> |
-  <%= link_to 'Back', ovnis_path %> |
-  <%= simple_form_for [ @ovni, @reservation ] do |f| %>
-    <%= f.input :dates %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
 </div>
-
