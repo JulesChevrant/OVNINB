@@ -17,7 +17,7 @@ user3 = User.create(first_name: 'Pierre', last_name: 'Gasly', email: 'p.gasly@gm
 user4 = User.create(first_name: 'Lando', last_name: 'Norris', email: 'l.norris@gmail.com', password: 'abcdefg')
 
 ovni1 = Ovni.create(name: 'Alpine14', price: 2500, details: 'Soucoupe volante pour 20 personnes', user: user1)
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+file = URI.open('https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e286ebf35/1280x720-webp/0611438495565-web-tete.webp')
 ovni1.photo.attach(io: file, filename: 'ovni1.png', content_type: 'image/png')
 
 ovni2 = Ovni.create(name: 'Merco44', price: 2000, details: 'Soucoupe volante pour 15 personnes', user: user2)
