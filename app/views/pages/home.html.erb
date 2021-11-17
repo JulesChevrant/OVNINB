@@ -20,7 +20,7 @@
         <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
         <p class="header-title"><%= ovni.price %></p>
       </header>
-      <div class="card-body"> Direction ta nouvelle galaxie </div>
+      <div class="card-body"> <%= ovni.name%> </div>
       <div class="card-footer">
         <button class="btn mt-3"> <%= link_to "Plus d'infos", ovni_path(ovni) %> </button>
       </div>
