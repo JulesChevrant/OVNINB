@@ -1,6 +1,13 @@
-<h1><%= @user.first_name%></h1>
+<h1 class = "text-dark"><%= @user.first_name %></h1>
 
-<% @reservations.each do |reservation| %>
-  <p><%= reservation.dates %></p>
-  <p><%= reservation.ovni.name %></p>
-<% end %>
+<div class="d-flex align-center justify-content-around mt-5">
+  <% @reservations.each do |reservation| %>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag(reservation.ovni.photo.key, crop: :fill, class: "card-img-profile") %>
+      <div class="card-body">
+        <p><%= reservation.dates %></p>
+        <p><%= reservation.ovni.name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
