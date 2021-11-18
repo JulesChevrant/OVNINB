@@ -15,14 +15,14 @@
 
   <div class="card-container">
     <% @ovnis.each do |ovni| %>
-      <div class="card d-flex justify-content-center">
+      <div class="card">
         <header class="card-header header-img">
           <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
-          <p class="header-title"><%= ovni.price %></p>
+          <p class="header-title"><%= ovni.name %></p>
         </header>
-        <div class="card-body"><%= ovni.name%></div>
+        <div class="card-body"><%= ovni.price%>€</div>
         <div class="card-footer">
-          <button class="btn mt-3"><%= link_to "Plus d'infos", ovni_path(ovni) %></button>
+          <button class="btn btn-card mt-3"><%= link_to "Plus d'infos", ovni_path(ovni) %></button>
         </div>
       </div>
     <% end %>
@@ -30,6 +30,6 @@
 
   <div class="btn-index d-flex align-items justify-content-between mt-5 mb-5">
     <h4>Découvre l'ensemble des vaisseaux de ta région</h4>
-    <button id="" class="btn-all"><%=link_to "Voir tous nos vaissaux", ovnis_path%></button>
+    <button class="btn-all"><%=link_to "Voir tous nos vaissaux", ovnis_path%></button>
   </div>
 </div>

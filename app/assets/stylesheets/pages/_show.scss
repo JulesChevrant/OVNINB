@@ -1,16 +1,37 @@
 .card-body {
   color: black;
+  display: flex;
+  flex-direction: column;
 }
+
+.card-title {
+  font-size: 2em;
+  color: black;
+ }
+
 
 .btn-flat {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: black;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
   background: #1BCB7F;
+  color: rgb(85, 76, 76);
+}
+
+.btn-flatwo {
   color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: red;
+  transition: background 0.3s ease;
+}
+
+.btn-flatwo:hover {
+  background: #1BCB7F;
+  color: rgb(85, 76, 76);
 }
