@@ -1,36 +1,35 @@
-<div class="banner d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path('milky.jpg') %>')">
-  <div class="container">
-    <h1>Reservez votre soucoupe volante</h1>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group d-flex">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <div><button name="button" type="submit" class="btn btn-primary mt-0">
-          <i class="fas fa-search"></i> <%= link_to "Search", ovnis_path%>
-        </button>
+<div id="home">
+  <div class="banner d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path('milky.jpg') %>')">
+    <div class="container">
+      <h1>Reservez votre soucoupe volante</h1>
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group d-flex">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-primary mt-0 d-flex align-items-center">
+            <%= link_to "Search", ovnis_path %><i class="fas fa-search"></i>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <% @ovnis.each do |ovni| %>
+      <div class="card d-flex justify-content-center">
+        <header class="card-header header-img">
+          <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
+          <p class="header-title"><%= ovni.price %></p>
+        </header>
+        <div class="card-body"><%= ovni.name%></div>
+        <div class="card-footer">
+          <button class="btn mt-3"><%= link_to "Plus d'infos", ovni_path(ovni) %></button>
         </div>
       </div>
     <% end %>
   </div>
-</div>
 
-
-<div class="card-container">
-  <% @ovnis.each do |ovni| %>
-    <div class="card d-flex justify-content-center">
-      <header class="card-header header-img">
-        <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
-        <p class="header-title"><%= ovni.price %></p>
-      </header>
-      <div class="card-body"> <%= ovni.name%> </div>
-      <div class="card-footer">
-        <button class="btn mt-3"> <%= link_to "Plus d'infos", ovni_path(ovni) %> </button>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-
-<div class="btn-index d-flex align-items justify-content-between mt-5 mb-5">
-  <h4>Découvre l'ensemble des vaisseaux de ta région</h4>
-  <button id="" class="btn-all"> <%=link_to "Voir tous nos vaissaux", ovnis_path%> </button>
+  <div class="btn-index d-flex align-items justify-content-between mt-5 mb-5">
+    <h4>Découvre l'ensemble des vaisseaux de ta région</h4>
+    <button id="" class="btn-all"><%=link_to "Voir tous nos vaissaux", ovnis_path%></button>
+  </div>
 </div>
