@@ -45,6 +45,6 @@ class OvnisController < ApplicationController
   private
 
   def ovnis_params
-    params.require(:ovni).permit(:name, :photo, :price, :details)
+    params.require(:ovni).permit(:name, :photo, :price, :details, :city)
   end
 end

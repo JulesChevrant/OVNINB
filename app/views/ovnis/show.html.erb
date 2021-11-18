@@ -6,7 +6,8 @@
 
     <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
     <div class="card-body">
-      <h5 class="card-title m-4"><%= @ovni.name %></h4>
+      <h4 class="card-title m-4"><%= @ovni.name %></h4>
+      <p class="card-text m-4">Ville : <%= @ovni.city %></p>
       <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
       <p class="card-text m-4"><%= @ovni.details %></p>
       <%= link_to 'Retour', ovnis_path, class: "btn btn-flat m-2" %>
