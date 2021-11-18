@@ -18,26 +18,26 @@ user4 = User.create(first_name: 'Lando', last_name: 'Norris', email: 'l.norris@g
 user5 = User.create(first_name: 'Max', last_name: 'Verstap', email: 'm.verstap@gmail.com', password: '654321')
 user6 = User.create(first_name: 'Charles', last_name: 'Leclerc', email: 'c.leclerc@gmail.com', password: '456789')
 
-ovni1 = Ovni.create(name: 'Alpine14', price: 3000, details: 'Soucoupe volante pour 20 personnes', user: user1)
+ovni1 = Ovni.create(name: 'Alpine14', price: 3000, details: 'Soucoupe volante pour 20 personnes', city: 'Paris', user: user1)
 file = URI.open('https://media.lesechos.com/api/v1/images/view/6114b5a53e45465e286ebf35/1280x720-webp/0611438495565-web-tete.webp')
 ovni1.photo.attach(io: file, filename: 'ovni1.png', content_type: 'image/png')
 
-ovni2 = Ovni.create(name: 'Merco44', price: 2500, details: 'Soucoupe volante pour 15 personnes', user: user2)
+ovni2 = Ovni.create(name: 'Merco44', price: 2500, details: 'Soucoupe volante pour 15 personnes', city: 'Marseille', user: user2)
 file = URI.open('https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg')
 ovni2.photo.attach(io: file, filename: 'ovni2.png', content_type: 'image/png')
 
-ovni3 = Ovni.create(name: 'Alpha10', price: 1200, details: 'Soucoupe volante pour 6 personnes', user: user3)
+ovni3 = Ovni.create(name: 'Alpha10', price: 1200, details: 'Soucoupe volante pour 6 personnes', city: 'Toulouse', user: user3)
 file = URI.open('https://img.over-blog.com/600x572/2/84/43/77/Bassin-d-Arcachon/soucoupe6.jpg')
 ovni3.photo.attach(io: file, filename: 'ovni3.png', content_type: 'image/png')
 
-ovni4 = Ovni.create(name: 'McLar4', price: 800, details: 'Soucoupe volante pour 2 personnes', user: user4)
+ovni4 = Ovni.create(name: 'McLar4', price: 800, details: 'Soucoupe volante pour 2 personnes', city: 'Paris', user: user4)
 file = URI.open('https://file1.telestar.fr/var/telestar/storage/images/media/images/2015/photos/20150408-vires-du-bon-coin/la-soucoupe-de-la-soupe-aux-choux-vendue-sur-ebay/823171-3-fre-FR/La-soucoupe-de-La-soupe-aux-choux-vendue-sur-eBay.jpg?alias=exact1024x768_l&size=x100&format=webp')
 ovni4.photo.attach(io: file, filename: 'ovni4.png', content_type: 'image/png')
 
-ovni5 = Ovni.create(name: 'RBull33', price: 1500, details: 'Soucoupe volante pour 8 personnes', user: user5)
+ovni5 = Ovni.create(name: 'RBull33', price: 1500, details: 'Soucoupe volante pour 8 personnes', city: 'Nantes', user: user5)
 file = URI.open('https://media.istockphoto.com/photos/unidentified-flying-object-clipping-path-included-picture-id1190295119?k=20&m=1190295119&s=612x612&w=0&h=OUZRvrL4V-QnYUYO2VnDU61DeEUN_y2ZrA9j2Gr4Prk=')
 ovni5.photo.attach(io: file, filename: 'ovni5.png', content_type: 'image/png')
 
-ovni6 = Ovni.create(name: 'Ferra16', price: 1600, details: 'Soucoupe volante pour 10 personnes', user: user6)
+ovni6 = Ovni.create(name: 'Ferra16', price: 1600, details: 'Soucoupe volante pour 10 personnes', city: 'Lille', user: user6)
 file = URI.open('https://media.istockphoto.com/photos/unidentified-flying-object-space-clipping-path-picture-id1186367786?k=20&m=1186367786&s=612x612&w=0&h=F6uHooFq6PGRo9jx6RaM3kYL-0mFKhz9XJqLEVqZSFk=')
 ovni6.photo.attach(io: file, filename: 'ovni6.png', content_type: 'image/png')
