@@ -1,6 +1,14 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  // margin: 0;
+  // padding: 0;
+  // box-sizing: border-box;
+}
+
 h1 {
   font-size: 24px;
   padding-left: 10px;
@@ -19,10 +27,6 @@ h1 {
   display: flex;
 }
 
-#page-home {
-  width: 100vw;
-}
-
 .nav-link {
   color: white;
   font-size: 1rem;
@@ -37,153 +41,138 @@ h1 {
   text-decoration: none;
 }
 
-.banner {
-  width: 100vw;
-  height: 60vh;
-  margin-left: -40px;
-}
-
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.notice {
-  margin: 0%;
-  padding: 0%;
-}
-
-.alert {
-  margin: 0%;
-  padding: 0%;
-}
-
-* {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --padding: 1rem;
-}
-
-.card-container {
-  margin: 1rem;
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  align-items: center;
-  padding: 20px 0;
-}
-
-.card {
-  background: white;
-  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .25);
-  border-radius: .50rem;
-  overflow: hidden;
-}
-
-.card-header .header-title {
-  padding: 0 var(--padding);
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-.card-body {
-  color: rgb(173, 173, 173);
-  font-size: 1.2rem;
-  padding: 0 var(--padding);
-  margin-bottom: 1rem;
-}
-
-.card-footer {
-  padding: var(--padding);
-  padding-top: 0;
-}
-
-.btn {
-  border: none;
-  background-color: hsl(0, 0%, 0%);
-  padding: .75em 1.5em;
-  border-radius: .25em;
-  transition: background-color 200ms ease;
-  font-weight: 500;
-  margin-right: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  color: white;
-  color: rgb(218, 209, 209);
-  text-decoration: none;
-}
-
-.btn:hover {
-    background-color: hsl(257, 51%, 42%);
+#home {
+  .fa-search {
     color: white;
-}
+    margin-left: 10px;
+  }
+  #page-home {
+    width: 100vw;
+  }
 
-.card-header.header-img {
-  padding: 0;
-  overflow: hidden;
-}
+  .banner {
+    width: 100vw;
+    height: 60vh;
+    margin-left: -40px;
+  }
 
-.card-header.header-img > img {
-  display: block;
-  width: 100%;
-  max-height: 200px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
-  transition: filter 200ms ease-in-out;
-}
+  .banner h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
 
-.card:hover > .card-header.header-img > img {
-	filter: brightness(0.9);
-}
+  .banner p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
 
-a {
+  .notice {
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .alert {
+    margin: 0%;
+    padding: 0%;
+  }
+
+  :root {
+    --padding: 1rem;
+  }
+
+  .card-container {
+    margin: 1rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .card {
+    background: white;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .25);
+    border-radius: .50rem;
+    overflow: hidden;
+  }
+
+  .card-header .header-title {
+    padding: 0 var(--padding);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .card-body {
+    color: rgb(173, 173, 173);
+    font-size: 1.2rem;
+    padding: 0 var(--padding);
+    margin-bottom: 1rem;
+  }
+
+  .card-footer {
+    padding: var(--padding);
+    padding-top: 0;
+  }
+
+  .btn:hover {
+      background-color: hsl(257, 51%, 42%);
+      color: white;
+  }
+
+  .card-header.header-img {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .card-header.header-img > img {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    transition: filter 200ms ease-in-out;
+  }
+
+  .card:hover > .card-header.header-img > img {
+    filter: brightness(0.9);
+  }
+
+  a {
     color: white;
     text-decoration: none;
-}
-
-.btn-all {
-  a {
-    color: black !important;
   }
-}
-.btn-all {
-  color: black !important;
-  border: 1px solid black;
-  padding: 8px 24px;
-  border-radius: 50px;
-  transition: opacity 0.3s ease;
-}
 
+  .btn-all {
+    a {
+      color: black !important;
+    }
+  }
 
-.btn-index {
-  color: black;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  transition: opacity 0.3s ease;
-}
+  .btn-all {
+    color: black !important;
+    border: 1px solid black;
+    padding: 8px 24px;
+    border-radius: 50px;
+    transition: opacity 0.3s ease;
+  }
 
-.btn-ghost:hover {
-  opacity: 1;
+  .btn-index {
+    color: black;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    opacity: 1;
+  }
 }

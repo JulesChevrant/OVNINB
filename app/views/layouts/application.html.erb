@@ -11,49 +11,12 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "ovni.png"%><h1>Ovni ' Nb</h1>
-      <% end %>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="box collapse navbar-collapse" id="navbarSupportedContent">
-        <%= link_to "Nos vaisseaux", ovnis_path, class: "nav-link" %>
-      </div>
-      <div class="profil">
-        <% if  current_user %>
-          <%= link_to "Mes réservations", profile_path%>
-          <%= image_tag "https://avatars.githubusercontent.com/u/78493094?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-        <% end %>
-      </div>
-      </div>
-    </div>
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' %>
     <div class="my-container" style="padding: 0 40px;">
       <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
-
-
-
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-        This footer is made with <i class="fas fa-heart"></i> by Ovni'Nb
-      </div>
-    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
