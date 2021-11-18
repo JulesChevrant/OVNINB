@@ -15,7 +15,8 @@
       <% end %>
 
       <%= simple_form_for [ @ovni, @reservation ] do |f| %>
-        <%= f.input :dates %>
+        <%= f.input :dates, label: "Date de départ" %>
+        <%= f.input :return_date, label: "Date de retour" %>
         <%= f.submit %>
       <% end %>
     </div>
