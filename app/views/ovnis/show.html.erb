@@ -1,25 +1,41 @@
-<div class="d-flex justify-content-center">
-  <div class="card m-5" style="width: 50rem;">
+<div class="container show">
+  <div class="row">
+    <div class="col-md-8 card mt-5 pt-4">
 
-    <%= cl_image_tag(@ovni.photo.key,
-        crop: :fill, class: "card-img-top") %>
+      <%= cl_image_tag(@ovni.photo.key, crop: :fill) %>
 
-    <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
-    <div class="card-body">
-      <h4 class="card-title m-4"><%= @ovni.name %></h4>
-      <p class="card-text m-4">Ville : <%= @ovni.city %></p>
-      <p class="card-text m-4"><%= @ovni.price %> € / semaine </p>
-      <p class="card-text m-4"><%= @ovni.details %></p>
-      <%= link_to 'Retour', ovnis_path, class: "btn btn-flat m-2" %>
-      <% if current_user == @ovni.user %>
-        <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-primary" %>
-      <% end %>
 
-      <%= simple_form_for [ @ovni, @reservation ] do |f| %>
-        <%= f.input :dates, label: "Date de départ" %>
-        <%= f.input :return_date, label: "Date de retour" %>
-        <%= f.submit %>
-      <% end %>
+      <%# <img class="card-img-top" src="https://static.actu.fr/uploads/2018/07/DSCN8987-1-1024x768.jpg" alt="Card image cap"> %>
+      <div class="card-body">
+        <h5 class="card-title">Soucoupe <%= @ovni.name %></h4>
+        <p class="card-tarif m-4">Tarif : <%= @ovni.price %>€</p>
+        <div class="ligne"></div>
+        <p class="card-text m-4"><%= @ovni.details %>  <br> <br> Type de moteur au principe de fonctionnement simple : deux ergols brûlent dans une chambre de combustion, sont accélérés par une tuyère de Laval et sont éjectés à grande vitesse par une tuyère.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center mt-5">
+      <div class="form-card text-white fw-bold py-5 px-4 mb-5">
+        <p>Formulaire de réservation</p>
+        <%= simple_form_for [ @ovni, @reservation ] do |f| %>
+          <%= f.input :dates, label: "Réservation" %>
+        <% end %>
+        <div class="">
+          <% if current_user == @ovni.user %>
+            <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-flat" %>
+          <% else %>
+            <%= simple_form_for [ @ovni, @reservation ] do |f| %>
+              <%= f.submit value: "Réserver", class: "btn btn-flatwo"%>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-profil text-white fw-bold py-5 px-4">
+        <p id="infos">Contact du propriétaire</p>
+        <p><%= @ovni.user.first_name %> <%= @ovni.user.last_name %> </p>
+        <p><%= @ovni.user.email %></p>
+      </div>
     </div>
   </div>
 </div>
