@@ -5,8 +5,7 @@ class OvnisController < ApplicationController
     if params["search"]
       @ovnis = policy_scope(Ovni).global_search(params["search"]["query"])
     else
-      @ovnis = policy_scope(Ovni)
-
+      @ovnis = policy_scope(Ovni.where.not(user: current_user))
     end
   end
 
