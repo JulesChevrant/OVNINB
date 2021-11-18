@@ -28,13 +28,44 @@ h1 {
 }
 
 .nav-link {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
-.nav-link:hover{
+.nav-link:after {
+  text-decoration:none;
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+.nav-link:hover {
   color: white;
-  border-bottom: 1px solid #ffffff;
+}
+
+.nav-link:hover:after {
+  color: white;
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.nav-dropdown {
+color: black;
+text-decoration:none;
 }
 
 .avatar {
