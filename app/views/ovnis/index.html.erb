@@ -10,18 +10,22 @@
           </button>
         </div>
       <% end %>
-<% @ovnis.each do |ovni| %>
-  <div class="card-product">
+
+<div class="card-ovni">
+ <% @ovnis.each do |ovni| %>
+    <%= link_to(ovni_path(ovni), class: "card-link") do %>
+    <div class="card" style="width: 18rem;">
     <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
-    <div class="card-product-infos">
-      <h2 class="name">
-        <%= link_to ovni.name, ovni_path(ovni) %>
-      </h2>
-      <p><%= ovni.details %></p>
-      <p class="ovni-price"><strong><%= ovni.price%> €</strong></p>
+    <div class="card-body">
+    <h5 class="card-title"><%= ovni.name %></h5>
+    <p class="card-text"><%= ovni.details %></p>
+    <p class="card-text"><strong><%= ovni.price%> €</strong></p>
+    <a href="#" class="btn btn-primary">Louer</a>
     </div>
-  </div>
-<% end %>
+    </div>
+    <% end %>
+  <% end %>
+</div>
 
 <%= link_to new_ovni_path do %>
   <i class="fa fa-plus"></i> Add a new ovni

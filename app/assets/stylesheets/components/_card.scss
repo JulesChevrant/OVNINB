@@ -10,7 +10,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 20px;
   filter: drop-shadow(5px 10px 4px #C4C4C4);
   border-radius: 10px;
 }
@@ -41,4 +40,15 @@
 .card-product:hover {
   background-color: #f7f7f7;
   cursor: pointer;
+}
+
+a.card-link {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.card-link {
+  background-color: black;
+  height: 200px;
+  color: white;
 }
