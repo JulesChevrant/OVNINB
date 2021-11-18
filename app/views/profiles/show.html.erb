@@ -1,5 +1,7 @@
 <h1 class = "text-dark"><%= @user.first_name %></h1>
 
+<h2>Mes demandes de réservations</h2>
+
 <div class="d-flex align-center justify-content-around mt-5">
   <h1 class = "text-dark"><%= @user.first_name %></h1>
 
@@ -10,11 +12,22 @@
       <div class="card-body">
         <p><%= reservation.dates %></p>
         <p><%= reservation.ovni.name %></p>
+        <p>
+          <% if reservation.status.nil? %>
+            En attente
+          <% elsif reservation.status %>
+            Demande acceptée
+          <% else %>
+            Demande refusée
+          <% end %>
+        </p>
       </div>
     </div>
   <% end %>
 </div>
 
+
+  
 <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
