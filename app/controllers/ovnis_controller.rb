@@ -2,7 +2,12 @@ class OvnisController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @ovnis = policy_scope(Ovni)
+    if params["search"]
+      @ovnis = policy_scope(Ovni).global_search(params["search"]["query"])
+    else
+      @ovnis = policy_scope(Ovni)
+
+    end
   end
 
   def show
