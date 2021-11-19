@@ -53,24 +53,22 @@
           <% end %>
         </div>
       </div>
-
-      <div class="search-wrapper">
-        <span class="fas fa-search"> </span>
-        <input type="search" placeholder="Search..." />
+      <h2>Mes demandes reçus</h2>
+      <div class="d-flex align-center justify-content-around mt-5">
+        <div class="d-flex align-center justify-content-around mt-5">
+          <% @reservations.each do |reservation| %>
+            <div class="card" style="width: 18rem;">
+              <%= cl_image_tag(reservation.ovni.photo.key, crop: :fill, class: "card-img-profile") %>
+              <div class="card-body">
+                <p><%= reservation.dates %></p>
+                <p><%= reservation.ovni.name %></p>
+                  <%= link_to "Accepter", approve_reservation_path(reservation), class: "btn-primary" %>
+                  <%= link_to "Refuser", refuse_reservation_path(reservation), class: "btn-danger" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-    <main>
-      <div class="d-flex flex-wrap justify-content-around mt-5">
-        <% @reservations.each do |reservation| %>
-          <div class="card" style="width: 18rem;">
-            <%= cl_image_tag(reservation.ovni.photo.key, crop: :fill, class: "card-img-profile") %>
-            <div class="card-body">
-              <p><%= reservation.dates %></p>
-              <p><%= reservation.ovni.name %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </main>
   </div>
 </div>

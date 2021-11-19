@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :ovnis do
-    resources :reservations, only: [ :new, :create, :index ]
+    resources :reservations, only: [ :new, :create ]
   end
-  resource :profile, only: [ :show ]
-
+  resources :profiles, only: [ :show ]
+  resources :reservations, only: [:index] do
+    member do
+      patch 'approve'
+      patch 'refuse'
+    end
+  end
 end

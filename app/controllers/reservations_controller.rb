@@ -1,8 +1,6 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
-    # authorize @Reservations
     @reservations = policy_scope(Reservation)
   end
 
@@ -22,6 +20,20 @@ class ReservationsController < ApplicationController
     else
       redirect_to ovni_path(@ovni)
     end
+  end
+
+  def approve
+    skip_authorization
+    reservation = Reservation.find(params[:id])
+    reservation.update(status: true)
+    redirect_to profile_path(current_user)
+  end
+
+  def refuse
+    skip_authorization
+    reservation = Reservation.find(params[:id])
+    reservation.update(status: false)
+    redirect_to profile_path(current_user)
   end
 
   private
