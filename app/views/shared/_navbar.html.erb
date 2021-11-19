@@ -19,7 +19,7 @@
           <%= image_tag "https://avatars.githubusercontent.com/u/78493094?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown" %>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><%= link_to "Mes réservations", profile_path, class: "nav-dropdown p-2"%></li>
+          <li><%= link_to "Mes réservations", reservations_path, class: "nav-dropdown p-2"%></li>
           <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-dropdown p-2" %></li>
         </ul>
       </div>
