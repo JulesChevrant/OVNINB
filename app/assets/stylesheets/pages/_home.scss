@@ -123,8 +123,10 @@ text-decoration:none;
     height: 600px;
     padding-top: 40px;
   }
-  .card-h1{
-    font-size: 36px;
+  .experience {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 6em 1em 1em 1em;
   }
 
   .card-container {
@@ -254,10 +256,24 @@ text-decoration:none;
   margin-left: 50px;
 }
 
+.btn-voyageur {
+  font-size: 1rem;
+  border: solid 1px white;
+  width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: black;
+  margin-left: 3em;
+  color: white;
+}
+
 .container-question {
   height: 700px;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   background-image: url("https://s3.amazonaws.com/static.rogerebert.com/uploads/blog_post/primary_image/features/happy-birthday-ripley-alien-at-40/ripley-image-2.jpg");
+  margin-bottom: 4em;
+  border-radius: 20px;
 }
 
 .text-container {
@@ -284,6 +300,28 @@ text-decoration:none;
   color: white
 }
 
+.btn-double-card {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  border: solid 1px white;
+  width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: black;
+  margin-left: 3em;
+  margin-top: 7em;
+}
+.question {
+  font-size: 42px;
+  font-weight: bold;
+  padding-top : 3em;
+  margin-left: 1em;
+  margin-right: 3em;
+  margin-bottom: 9em;
+  width: 600px;
+}
+
 .titre-recherche {
   margin: 0;
   padding: 0;
@@ -294,6 +332,7 @@ text-decoration:none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  column-gap: 20px;
 }
 
 .double-card {
