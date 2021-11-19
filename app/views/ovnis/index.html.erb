@@ -12,12 +12,12 @@
           </div>
 
 
-  <div class="d-flex justify-content-center" style="flex-wrap: wrap;">
+  <div class="d-flex justify-content-center card-container-index" style="flex-wrap: wrap;">
     <% @ovnis.each do |ovni| %>
       <%= link_to(ovni_path(ovni), class: "card-link") do %>
         <div class="super-card">
-          <div class="super-div-img">
-            <%= cl_image_tag(ovni.photo.key, crop: :fill) %>
+          <div class="super-div-img" style="height: 60%">
+            <%= cl_image_tag(ovni.photo.key, crop: :fill)%>
           </div>
           <div class="container-new-card">
             <h4><%= ovni.name %></h4>
