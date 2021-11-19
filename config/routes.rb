@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :reservations, only: [ :new, :create, :index ]
   end
   resource :profile, only: [ :show ]
+
 end

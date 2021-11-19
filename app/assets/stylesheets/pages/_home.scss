@@ -118,8 +118,8 @@ text-decoration:none;
   }
 
   .card-container {
+    display: flex;
     margin: 1rem;
-    display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
@@ -132,6 +132,7 @@ text-decoration:none;
     border-radius: .50rem;
     overflow: hidden;
     padding: 10px;
+    height: 400px;
   }
   .card-header .header-title {
     padding: 0 var(--padding);
@@ -142,8 +143,13 @@ text-decoration:none;
     color: white;
   }
 
+  div.card-body {
+    background-color: black;
+  }
+
   .card-body {
-    color: rgb(173, 173, 173);
+    background-color: black;
+    color: white;
     font-size: 1.2rem;
     padding: 0 var(--padding);
     margin-bottom: 1rem;

@@ -4,8 +4,8 @@ class Ovni < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :name, :price, :details ],
+    against: [ :name, :price, :details, :city ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end

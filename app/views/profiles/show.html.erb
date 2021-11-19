@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="sidebar">
   <div class="sidebar-brand">
     <h1><span>Ovni ' Nb</span>
@@ -32,6 +33,80 @@
   <div class="test">
     <div class="">
       <h4>Hi <%= current_user.first_name %> !</h4>
+=======
+<h1 class = "text-dark"><%= @user.first_name %></h1>
+
+<h2>Mes demandes de réservations</h2>
+
+<div class="d-flex align-center justify-content-around mt-5">
+  <h1 class = "text-dark"><%= @user.first_name %></h1>
+
+<div class="d-flex align-center justify-content-around mt-5">
+  <% @reservations.each do |reservation| %>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag(reservation.ovni.photo.key, crop: :fill, class: "card-img-profile") %>
+      <div class="card-body">
+        <p><%= reservation.dates %></p>
+        <p><%= reservation.ovni.name %></p>
+        <p>
+          <% if reservation.status.nil? %>
+            En attente
+          <% elsif reservation.status %>
+            Demande acceptée
+          <% else %>
+            Demande refusée
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+  
+<input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+          <h1><span>Ovni ' Nb</span>
+          </h1>
+        </div>
+
+        <div class="sidebar-menu">
+          <ul>
+            <li>
+              <a href="#" class="active">
+                <span class="fas fa-tachometer-alt"></span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="fas fa-stream"></span>
+              <span>My offers</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="fas fa-shopping-cart"></span>
+                <span>Reservations</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="fas fa-enveloppe"></span>
+                <span>Messages</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="fas fa-user-circle"></span>
+                <span>Accounts</span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+>>>>>>> 42500f6e0d44a051b9d3b117e5a7fc5b7e7d4235
     </div>
 
     <div class="search-wrapper">
