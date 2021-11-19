@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :ovnis
   has_many :reservations
+  has_many :demands, through: :ovnis, source: :reservations
 end

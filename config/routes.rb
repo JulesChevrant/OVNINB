@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :ovnis do
     resources :reservations, only: [ :new, :create ]
   end
-  resources :profiles, only: [ :show ]
+
   resources :reservations, only: [:index] do
     member do
       patch 'approve'

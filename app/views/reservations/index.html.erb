@@ -56,7 +56,7 @@
       <h2>Mes demandes reçus</h2>
       <div class="d-flex align-center justify-content-around mt-5">
         <div class="d-flex align-center justify-content-around mt-5">
-          <% @reservations.each do |reservation| %>
+          <% current_user.demands.where(status: nil).each do |reservation| %>
             <div class="card" style="width: 18rem;">
               <%= cl_image_tag(reservation.ovni.photo.key, crop: :fill, class: "card-img-profile") %>
               <div class="card-body">
