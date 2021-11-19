@@ -17,13 +17,12 @@
     <div class="col-md-4 text-center mt-5">
       <div class="form-card text-white fw-bold py-5 px-4 mb-5">
         <p>Formulaire de réservation</p>
-        <%= simple_form_for [ @ovni, @reservation ] do |f| %>
-          <%= f.input :dates, label: "Réservation" %>
-        <% end %>
-        <div class="">
           <% if current_user == @ovni.user %>
             <%= link_to 'Editer mon annonce', edit_ovni_path(@ovni), class: "btn btn-flat" %>
           <% else %>
+            <%= simple_form_for [ @ovni, @reservation ] do |f| %>
+              <%= f.input :dates, label: "Date de départ" %>
+              <%= f.input :return_date, label: "Date de retour" %>
               <%= f.submit value: "Réserver", class: "btn btn-flatwo"%>
             <% end %>
           <% end %>

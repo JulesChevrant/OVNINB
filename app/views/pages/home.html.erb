@@ -15,25 +15,29 @@
 
 <div class="d-flex justify-content-center mt-5 mb-4 titre-recommande"><h2>Des idées pour votre prochain voyage :</h2></div>
 
-<div class="card-container">
+<div class="card-container-new">
   <% @ovnis.each do |ovni| %>
     <%= link_to(ovni_path(ovni), class: "card-link") do %>
-    <div class="card" style="width: 18rem;">
-    <%= cl_image_tag(ovni.photo.key, crop: :fill, class: "card-img-top") %>
-    <div class="card-body">
-    <h5 class="card-title"><%= ovni.name %></h5>
-    <p class="card-text"><%= ovni.details %></p>
-    <p class="card-text"><strong><%= ovni.price%> €</strong></p>
-    <a href="#" class="btn btn-primary">Louer</a>
-    </div>
-    </div>
+      <div class="super-card">
+        <div class="super-div-img">
+          <%= cl_image_tag(ovni.photo.key, crop: :fill) %>
+        </div>
+        <div class="container-new-card">
+          <h4><%= ovni.name %></h4>
+          <p><%= ovni.price%></p>
+          <p><%= ovni.details %></p>
+          <p class="btn-louer">Louer</p>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>
 
+
+
   <div class="btn-index d-flex align-items justify-content-between mt-5 mb-5">
     <h4 class="phrase-footer">Découvre l'ensemble des vaisseaux de ta région :</h4>
-    <button id="" class="btn-all"><%=link_to "Voir tous nos vaissaux", ovnis_path%></button>
+    <button id="" class="btn-all-new"><%=link_to "Voir tous nos vaissaux", ovnis_path%></button>
   </div>
 </div>
 
@@ -44,5 +48,20 @@
       <a href="">En savoir plus</a>
   </div>
     <img src="https://i.pinimg.com/564x/62/bb/9a/62bb9a863d018189c6756b9cb540394c.jpg">
+  </div>
+</div>
+
+<h2>Découvrez les expériences Ovni'nb</h2>
+<div class="container-double-card">
+  <div class="double-card">
+  <h1>Des expériences
+à vivre pendant
+votre voyage</h1>
+  </div>
+
+  <div class="double-card-2">
+  <h1>Des expériences
+à vivre
+de chez vous</h1>
   </div>
 </div>
