@@ -19,10 +19,10 @@
 
   <div class="card-container-new">
     <% @ovnis.each do |ovni| %>
-      <%= link_to(ovni_path(ovni), class: "card-link") do %>
+      <%= link_to(ovni_path(ovni),cloud_name: :dukcncnld, class: "card-link") do %>
         <div class="super-card">
           <div class="super-div-img">
-            <%= cl_image_tag(ovni.photo.key, crop: :fill) %>
+            <%= cl_image_tag(ovni.photo.key, cloud_name: :dukcncnld, crop: :fill) %>
           </div>
           <div class="container-new-card">
             <h4><%= ovni.name %></h4>
