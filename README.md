@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Airbnb clone, created as a group project, during Le Wagon's Fullstack web development program.
+Link to the app, deployed with Heroku : https://ovninb-juleschevrant.herokuapp.com/
